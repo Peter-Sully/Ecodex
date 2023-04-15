@@ -52,7 +52,7 @@ class CameraClick(BoxLayout):
         camera.export_to_png("./data/temp.png".format(timestr))
         print("Captured")
         with open("./data/temp.png", "rb") as image_data:
-            theData = ifi.infoFromImage(image_data)
+            theData = ifi.sciNameFromImage(image_data)
         print(theData)
 
 
