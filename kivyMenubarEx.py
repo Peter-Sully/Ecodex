@@ -17,6 +17,27 @@ Screen:
             right_action_items:[['cog-box',lambda x: app.navigation_draw()]]
             elevation:2
             md_bg_color: 0,100/255, 0,1
+        GridLayout:
+            cols:3
+            spacing:10
+            Button:
+                text: 'press me'
+            Button:
+                text: 'press me'
+            Button:
+                text: 'press me'
+            Button:
+                text: 'press me'
+            Button:
+                text: 'press me'
+            Button:
+                text: 'press me'
+            Button:
+                text: 'press me'
+            Button:
+                text: 'press me'               
+            Button:
+                text: 'press me'   
     MDFloatingActionButton:
         icon: "camera"
         pos_hint: {"center_x": .8, "center_y": .1}
@@ -36,3 +57,4 @@ class Demo(MDApp):
 if __name__ == "__main__":
     Window.size = (450, 820)
     Demo().run()
+
