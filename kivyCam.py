@@ -54,6 +54,7 @@ class CameraClick(BoxLayout):
         with open("./data/temp.png", "rb") as image_data:
             theData = ifi.sciNameFromImage(image_data)
         print(theData)
+        return(theData)
 
 
 class TestCamera(App):

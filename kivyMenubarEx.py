@@ -4,6 +4,7 @@ from kivymd.uix.screen import Screen
 from kivy.lang import Builder
 from kivy.core.window import Window
 from kivy.uix.popup import Popup
+from kivy.uix.image import AsyncImage
 
 # builder method
 helper="""
