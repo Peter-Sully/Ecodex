@@ -3,7 +3,7 @@ from kivymd.uix.label import MDLabel
 from kivymd.uix.screen import Screen
 from kivy.lang import Builder
 from kivy.core.window import Window
-  
+
 # builder method
 helper="""
 Screen:
