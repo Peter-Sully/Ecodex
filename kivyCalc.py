@@ -49,7 +49,7 @@ class MainApp(App):
             self.solution.text = ""
             popup = Popup(title='Test popup',
                 content=Label(text='Hello world'),
-                size_hint=(None, None), size=(400, 400))
+                size_hint=(None, None), size=(500, 700))
             popup.open()
         else:
             if current and (

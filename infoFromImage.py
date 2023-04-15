@@ -16,6 +16,7 @@ def sciNameFromImage(image_data) -> str:
     except:
         print("something went wrong with the json probably")
         print(json_result)
+        raise Exception("Non-Plant Image")
 
 def infoFromsciName(sciName : str):
     api_url = f"https://explorer.natureserve.org/api/data/"
