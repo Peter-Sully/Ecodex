@@ -1,4 +1,4 @@
-import requests
+import requests # type: ignore
 import json
 
 api_url = f"https://explorer.natureserve.org/api/data/"
