@@ -2,6 +2,7 @@ from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivymd.uix.toolbar import MDToolbar
 from kivy.uix.screenmanager import Screen, ScreenManager
+from kivy.core.window import Window
 
 
 class MainApp(MDApp):
