@@ -3,6 +3,7 @@ from kivymd.uix.label import MDLabel
 from kivymd.uix.screen import Screen
 from kivy.lang import Builder
 from kivy.core.window import Window
+from kivy.uix.popup import Popup
 
 # builder method
 helper="""
@@ -22,6 +23,8 @@ Screen:
             spacing:10
             Button:
                 text: 'press me'
+                on_press:
+                    root.pop1()
             Button:
                 text: 'press me'
             Button:
@@ -44,12 +47,16 @@ Screen:
         md_bg_color: 0,100/255,0,1
 """
 class Demo(MDApp):
-  
+
     def build(self):
-  
         screen=Builder.load_string(helper)
         return screen
-      
+    
+    def pop1(self):
+        pop = Popup(title='test', content=AsyncImage(source='http://kivy.org/logos/kivy-logo-black-64.png'),
+                    size_hint=(None, None), size=(400, 400))
+        pop.open()
+    
     # lambda Function
     def navigation_draw(self):
         print("NavBar")
