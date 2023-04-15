@@ -10,13 +10,16 @@ def sciNameFromImage(image_data) -> str:
     json_result = json.loads(req.text)
     
     if req.status_code != 200:
-        print("bad things happened, image recog API not 200 status code")
-    try:
-        return json_result["results"][0]["species"]["scientificNameWithoutAuthor"]
-    except:
-        print("failed to read pl@ntnet API json")
+        print("Image recog API failed")
         print(json_result)
-        raise Exception("Non-Plant Image")
+        return ""
+    else:
+        try:
+            return json_result["results"][0]["species"]["scientificNameWithoutAuthor"]
+        except:
+            print("failed to read pl@ntnet API json")
+            print(json_result)
+            raise Exception("Non-Plant Image")
 
 def infoFromsciName(sciName : str):
     api_url = f"https://explorer.natureserve.org/api/data/"
@@ -52,8 +55,11 @@ def infoFromsciName(sciName : str):
 
 def infoFromImage(image_data):
     sciName = sciNameFromImage(image_data) #accesses Pl@ntNet API to recognize image
-    infoJson = infoFromsciName(sciName) #accesses NatureServe Explorer REST API to get information about plant
-    return infoJson
+    if sciName:
+        infoJson = infoFromsciName(sciName) #accesses NatureServe Explorer REST API to get information about plant
+        return infoJson
+    else:
+        return False
 
 # sciName = sciNameFromImage("./data/image_1.jpeg")
 # sciName = "Epilobium canum"
