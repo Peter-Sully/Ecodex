@@ -14,7 +14,7 @@ def sciNameFromImage(image_data) -> str:
     try:
         return json_result["results"][0]["species"]["scientificNameWithoutAuthor"]
     except:
-        print("something went wrong with the json probably")
+        print("failed to read pl@ntnet API json")
         print(json_result)
         raise Exception("Non-Plant Image")
 
@@ -41,8 +41,11 @@ def infoFromsciName(sciName : str):
         "speciesTaxonomyCriteria": []
     }
     response = requests.post(api_url+"speciesSearch", json=payload)
-    uniqueId = response.json()["results"][0]["uniqueId"]
-    
+    try:
+        uniqueId = response.json()["results"][0]["uniqueId"]
+    except:
+        print(response)
+        raise Exception("failed to read natureServe API Json")
     response = requests.post(api_url+"taxon/"+uniqueId)
 
     return response.json()
