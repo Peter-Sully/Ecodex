@@ -23,7 +23,7 @@ Screen:
             cols:3
             spacing:10
             Button:
-                text: 'press me'
+                text: 'Chamaedorea seifrizii'
                 on_press:
                     root.pop1()
             Button:
