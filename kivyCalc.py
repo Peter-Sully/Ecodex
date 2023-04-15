@@ -4,6 +4,7 @@ from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
+from kivy.uix.image import AsyncImage
 
 class MainApp(App):
     def build(self):
@@ -37,6 +38,8 @@ class MainApp(App):
         )
         equals_button.bind(on_press=self.on_solution)
         main_layout.add_widget(equals_button)
+        
+        main_layout.add_widget(AsyncImage(source ='http://kivy.org/logos/kivy-logo-black-64.png'))
 
         return main_layout
 
@@ -47,10 +50,11 @@ class MainApp(App):
         if button_text == "C":
             # Clear the solution widget
             self.solution.text = ""
-            popup = Popup(title='Test popup',
-                content=Label(text='Hello world'),
-                size_hint=(None, None), size=(500, 700))
-            popup.open()
+            # popup = Popup(title='Test popup',
+            #     content=Label(text='Hello world'),
+            #     size_hint=(None, None), size=(500, 700))
+            # popup.open()
+            
         else:
             if current and (
                 self.last_was_operator and button_text in self.operators):
