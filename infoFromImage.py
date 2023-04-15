@@ -11,8 +11,11 @@ def sciNameFromImage(image_data) -> str:
     
     if req.status_code != 200:
         print("bad things happened, image recog API not 200 status code")
-    
-    return json_result["results"][0]["species"]["scientificNameWithoutAuthor"]
+    try:
+        return json_result["results"][0]["species"]["scientificNameWithoutAuthor"]
+    except:
+        print("something went wrong with the json probably")
+        print(json_result)
 
 def infoFromsciName(sciName : str):
     api_url = f"https://explorer.natureserve.org/api/data/"
