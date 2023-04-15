@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
+from kivy.uix.popup import Popup
 
 class MainApp(App):
     def build(self):
@@ -45,6 +46,9 @@ class MainApp(App):
         if button_text == "C":
             # Clear the solution widget
             self.solution.text = ""
+            popup = Popup(title='Test popup',
+                content=Label(text='Hello world'),
+                size_hint=(None, None), size=(400, 400))
         else:
             if current and (
                 self.last_was_operator and button_text in self.operators):
