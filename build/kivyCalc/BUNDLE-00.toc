@@ -1,0 +1,3 @@
+([('kivyCalc',
+   '/Users/conorfloyd/Desktop/coding/Ecodex/dist/kivyCalc',
+   'EXECUTABLE')],)
