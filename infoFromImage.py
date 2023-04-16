@@ -17,7 +17,7 @@ def sciNameFromImage(image_data) -> str:
     except:
         print("failed to read pl@ntnet API json")
         print(json_result)
-        return "404"
+        raise Exception("Non-Plant Image")
 
 
 def infoFromsciName(sciName: str):
