@@ -40,7 +40,7 @@ class PhotoScreen(Screen):
         btn = Button(text=str(i), size_hint_y=None, height=300)
         layout.add_widget(btn)
     rt = ScrollView(size_hint=(1, None), size=(Window.width, Window.height))
-    root.clear_widgets()
+    app.clear_widgets()
     root.add_widget()
 
 
