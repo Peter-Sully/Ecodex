@@ -65,5 +65,5 @@ def infoFromImage(image_data):
 # plantdata = infoFromsciName(sciName)
 # print("plant data:",plantdata)
 
-with open("./data/image_1.jpeg", "rb") as image_data:
-    theData = infoFromImage(image_data)
+# with open("./data/image_1.jpeg", "rb") as image_data:
+#     theData = infoFromImage(image_data)

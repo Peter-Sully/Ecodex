@@ -60,6 +60,7 @@ class CameraClick(BoxLayout):
         with open("./data/temp.png", "rb") as image_data:
             theData = ifi.sciNameFromImage(image_data)
         if theData == "404":
+            print("Thats not a Plant or we cant find it in your EcoDex")
             return
         os.rename("./data/temp.png", f"./data/{theData}.png")
 
