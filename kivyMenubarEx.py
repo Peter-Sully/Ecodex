@@ -23,25 +23,23 @@ Screen:
             cols:3
             spacing:10
             Button:
-                text: 'Chamaedorea seifrizii'
-                on_press:
-                    root.pop1()
+                text: 'California Fuschia'
             Button:
-                text: 'press me'
+                text: 'White Sage'
             Button:
-                text: 'press me'
+                text: 'Indian Mallow'
             Button:
-                text: 'press me'
+                text: 'Chalk Dudleya'
             Button:
-                text: 'press me'
+                text: 'Dwarf Coyote Bush'
             Button:
-                text: 'press me'
+                text: 'Toyon'
             Button:
-                text: 'press me'
+                text: 'Sugar Bush'
             Button:
-                text: 'press me'               
+                text: 'Hollyleaf Cherry'               
             Button:
-                text: 'press me'   
+                text: 'Showy Penstemon'   
     MDFloatingActionButton:
         icon: "camera"
         pos_hint: {"center_x": .8, "center_y": .1}
@@ -52,11 +50,6 @@ class Demo(MDApp):
     def build(self):
         screen=Builder.load_string(helper)
         return screen
-    
-    def pop1(self):
-        pop = Popup(title='test', content=AsyncImage(source='http://kivy.org/logos/kivy-logo-black-64.png'),
-                    size_hint=(None, None), size=(400, 400))
-        pop.open()
     
     # lambda Function
     def navigation_draw(self):
