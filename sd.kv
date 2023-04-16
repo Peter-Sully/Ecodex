@@ -1,0 +1,16 @@
+#:import MDFloatingActionButtonSpeedDial kivymd.uix.button.MDFloatingActionButtonSpeedDial
+
+MDBoxLayout:
+    orientation: 'vertical'
+
+    MDScreen:
+
+        MDLabel:
+            id: my_label
+            text: "Some"
+            halign: "center"
+
+        MDFloatingActionButtonSpeedDial:
+            data: app.data
+            root_button_anim: True
+
