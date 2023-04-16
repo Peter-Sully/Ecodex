@@ -21,6 +21,7 @@ from kivy.uix.camera import Camera
 import time
 import io
 import infoFromImage as ifi
+import os
 
 
 Builder.load_string(
@@ -41,6 +42,11 @@ Builder.load_string(
         size_hint_y: None
         height: '48dp'
         on_press: root.capture()
+    Button:
+        text: 'swap'
+        size_hint_y: None
+        height: '48dp'
+        on_press: root.swap()
 """
 )
 
@@ -53,7 +59,13 @@ class CameraClick(BoxLayout):
         print("Captured")
         with open("./data/temp.png", "rb") as image_data:
             theData = ifi.sciNameFromImage(image_data)
-        print(theData)
+        if theData == "404":
+            return
+        os.rename("./data/temp.png", f"./data/{theData}.png")
+
+    def swap(self):
+        self.text = "hai"
+        print("hai")
 
 
 class TestCamera(App):
